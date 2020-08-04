@@ -16,6 +16,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import {MatSliderModule} from '@angular/material/slider';
 import { DishdetailsComponent } from './dishdetails/dishdetails.component';
 
 import { DishService } from './services/dish.service';
@@ -67,6 +68,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     MatCheckboxModule,
     MatSelectModule,
     MatSlideToggleModule,
+    MatSliderModule,
     MatProgressSpinnerModule,
     AppRoutingModule,
     FormsModule,
