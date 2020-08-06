@@ -1,4 +1,4 @@
-import { Component, OnInit, Input , ViewChild} from '@angular/core';
+import { Component, OnInit, Input , ViewChild, Inject} from '@angular/core';
 import { Dish } from '../shared/dish';
 
 import { DishService } from '../services/dish.service';
@@ -11,7 +11,6 @@ import { switchMap } from 'rxjs/operators';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { Comment } from '../shared/comment';
-import { DISHES } from '../shared/dishes';
 
 
 @Component({
@@ -38,16 +37,16 @@ export class DishdetailsComponent implements OnInit {
 
   cvalidationMessages = {
     'author': {
-      'required':      'Author Name is required.',
-      'minlength':     'Author Name must be at least 2 characters long.',
-      'maxlength':     'Author Name cannot be more than 25 characters long.'
+      'required':  'Author Name is required.',
+      'minlength': 'Author Name must be at least 2 characters long.',
+      'maxlength': 'Author Name cannot be more than 25 characters long.'
     },
     'comment':{
-      'required':      'Comment is required.'
+      'required':  'Comment is required.'
     }
   };
 	
-  constructor(private cfb: FormBuilder,private dishservice: DishService, private route: ActivatedRoute,private location: Location) {
+  constructor(private cfb: FormBuilder,private dishservice: DishService, private route: ActivatedRoute,private location: Location, @Inject('BaseURL') private baseURL) {
       this.createCommentForm();
    }
 
@@ -118,7 +117,7 @@ export class DishdetailsComponent implements OnInit {
     .subscribe(dish=>{this.dish=dish; this.dish.comments.push(mycomment)});
     this.commentForm.reset({
       author: '',
-      rating: 0,
+      rating: 5,
       comment: ''   
     });
     this.commentFormDirective.resetForm();
