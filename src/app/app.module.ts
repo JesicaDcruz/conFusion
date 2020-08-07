@@ -28,6 +28,8 @@ import { DishdetailsComponent } from './dishdetails/dishdetails.component';
 import { DishService } from './services/dish.service';
 import { PromotionService } from './services/promotion.service';
 import { LeaderService } from './services/leader.service';
+import { ProcessHTTPMsgService } from './services/process-httpmsg.service';
+
 
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -90,6 +92,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     DishService,
     PromotionService,
     LeaderService,
+    ProcessHTTPMsgService,
     {provide: 'BaseURL', useValue: baseURL}
   ],
   bootstrap: [AppComponent]
