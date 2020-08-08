@@ -48,6 +48,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { HighlightDirective } from './directives/highlight.directive';
 
 
 @NgModule({
@@ -60,7 +61,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     AboutComponent,
     HomeComponent,
     ContactComponent,
-    LoginComponent
+    LoginComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
